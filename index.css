@@ -1,0 +1,209 @@
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   margin: 1% auto;
+   max-width: 1240px;
+}
+
+.notes-table {
+   flex: 1 1 100%;
+}
+
+.header-notes {
+   display: flex;
+   height: 32px;
+   background-color: #999999;
+   color: #ffffff;
+   font-weight: 900;
+   margin-bottom: 10px;
+}
+
+.list-item-notes {
+   display: flex;
+   height: 42px;
+   background-color: #e8eaf5;
+   margin-bottom: 10px;
+}
+
+.header-empty {
+   flex: 1 1 3%;
+   margin-right: 5px;
+}
+
+.header-name {
+   flex: 1 1 30%;
+   align-self: center;
+}
+
+.header-created {
+   flex: 1 1 15%;
+   align-self: center;
+}
+
+.header-category {
+   flex: 1 1 15%;
+   align-self: center;
+}
+
+.header-content {
+   flex: 1 1 15%;
+   align-self: center;
+}
+
+.header-dates {
+   flex: 1 1 15%;
+   align-self: center;
+}
+
+.header-icon-edit {
+   flex: 1 1 2%;
+}
+
+.header-icon-archive {
+   background-image: url(img/icon-archive-white.png);
+   background-position: center;
+   background-size: 24px;
+   background-repeat: no-repeat;
+   flex: 1 1 2%;
+}
+
+.header-icon-delete {
+   background-image: url(img/icon-delete-white.png);
+   background-position: center;
+   background-size: 24px;
+   background-repeat: no-repeat;
+   flex: 1 1 2%;
+}
+
+.icon {
+   background-image: url(img/icon-idea.png);
+   background-position: center;
+   background-size: 30px;
+   background-repeat: no-repeat;
+   flex: 1 1 3%;
+   margin-right: 5px;
+}
+
+.name {
+   flex: 1 1 30%;
+   align-self: center;
+}
+
+.created {
+   flex: 1 1 15%;
+   align-self: center;
+   color: #645d5d;
+}
+
+.category {
+   flex: 1 1 15%;
+   align-self: center;
+   color: #645d5d;
+}
+
+.content {
+   flex: 1 1 15%;
+   align-self: center;
+   color: #645d5d;
+}
+
+.dates {
+   flex: 1 1 15%;
+   align-self: center;
+   color: #645d5d;
+}
+
+.icon-edit {
+   background-image: url(img/icon-edit-gray.png);
+   background-position: center;
+   background-size: 24px;
+   background-repeat: no-repeat;
+   flex: 1 1 2%;
+}
+
+.icon-archive {
+   background-image: url(img/icon-archive-gray.png);
+   background-position: center;
+   background-size: 24px;
+   background-repeat: no-repeat;
+   flex: 1 1 2%;
+}
+
+.icon-delete {
+   background-image: url(img/icon-delete-gray.png);
+   background-position: center;
+   background-size: 24px;
+   background-repeat: no-repeat;
+   flex: 1 1 2%;
+}
+
+button {
+   margin: 1% 0 4% auto;
+}
+
+.summary-table {
+   flex-direction: column;
+   flex: 1 1 100%;
+}
+
+.summary-header-notes {
+   display: flex;
+   height: 32px;
+   background-color: #999999;
+   color: #ffffff;
+   font-weight: 900;
+   margin-bottom: 10px;
+}
+
+.summary-list-item-notes {
+   display: flex;
+   height: 42px;
+   background-color: #e8eaf5;
+   margin-bottom: 10px;
+}
+
+.summary-header-empty {
+   flex: 1 1 3%;
+   margin-right: 5px;
+}
+
+.summary-icon {
+   background-image: url(img/icon-idea.png);
+   background-position: center;
+   background-size: 30px;
+   background-repeat: no-repeat;
+   flex: 1 1 3%;
+   margin-right: 5px;
+}
+
+.summary-header-name {
+   flex: 1 1 30%;
+   align-self: center;
+}
+
+.summary-header-category {
+   flex: 1 1 30%;
+   align-self: center;
+}
+
+.summary-header-content {
+   flex: 1 1 40%;
+   align-self: center;
+}
+
+.summary-name {
+   flex: 1 1 30%;
+   align-self: center;
+}
+
+.summary-category {
+   flex: 1 1 30%;
+   align-self: center;
+   color: #645d5d;
+}
+
+.summary-content {
+   flex: 1 1 40%;
+   align-self: center;
+   color: #645d5d;
+}
