@@ -75,7 +75,25 @@
    flex: 1 1 2%;
 }
 
-.icon {
+.icon-task {
+   background-image: url(img/icon-task.png);
+   background-position: center;
+   background-size: 30px;
+   background-repeat: no-repeat;
+   flex: 1 1 3%;
+   margin-right: 5px;
+}
+
+.icon-random-thought {
+   background-image: url(img/icon-thought.png);
+   background-position: center;
+   background-size: 30px;
+   background-repeat: no-repeat;
+   flex: 1 1 3%;
+   margin-right: 5px;
+}
+
+.icon-idea {
    background-image: url(img/icon-idea.png);
    background-position: center;
    background-size: 30px;
@@ -83,6 +101,7 @@
    flex: 1 1 3%;
    margin-right: 5px;
 }
+
 
 .name {
    flex: 1 1 30%;
@@ -139,6 +158,7 @@
 
 button {
    margin: 1% 0 4% auto;
+   cursor: pointer;
 }
 
 .summary-table {
@@ -168,7 +188,7 @@ button {
 }
 
 .summary-icon {
-   background-image: url(img/icon-idea.png);
+   background-image: url(img/icon-task.png);
    background-position: center;
    background-size: 30px;
    background-repeat: no-repeat;
@@ -176,34 +196,66 @@ button {
    margin-right: 5px;
 }
 
-.summary-header-name {
-   flex: 1 1 30%;
-   align-self: center;
-}
-
 .summary-header-category {
    flex: 1 1 30%;
    align-self: center;
 }
 
-.summary-header-content {
-   flex: 1 1 40%;
+.summary-header-active {
+   flex: 1 1 30%;
    align-self: center;
 }
 
-.summary-name {
-   flex: 1 1 30%;
+.summary-header-archived {
+   flex: 1 1 40%;
    align-self: center;
 }
 
 .summary-category {
    flex: 1 1 30%;
    align-self: center;
+}
+
+.summary-active {
+   flex: 1 1 30%;
+   align-self: center;
    color: #645d5d;
 }
 
-.summary-content {
+.summary-archived {
    flex: 1 1 40%;
    align-self: center;
    color: #645d5d;
+}
+
+.modal {
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   width: 25%;
+   height: 35%;
+   top: calc(100% - 80%);
+   left: calc(100% - 65%);
+   border: 2px solid gray;
+   background-color: #e8eaf5;
+   opacity: 90%;
+   padding: 2%;
+   font-weight: 900;
+}
+
+.modal-name {
+   flex: 1 1 30%;
+
+}
+
+.modal-category {
+   flex: 1 1 20%;
+}
+
+.modal-content {
+   flex: 1 1 40%;
+}
+
+.modal-hidden {
+   visibility: hidden;
 }
