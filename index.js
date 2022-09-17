@@ -16,21 +16,15 @@ archivedBtn.addEventListener('click', () => getDataType(dataArchived))
 
 createNoteBtn.addEventListener('click', () => {
    renderModal()
-   const btnOK = document.querySelector('#btnOK')
-   const btnCancel = document.querySelector('#btnCancel')
-
-   btnCancel.addEventListener('click', () => document.querySelector('.modal').remove())
-   btnOK.addEventListener('click', () => {
-      addNoteInDataList(dataActive)
-      document.querySelector('.modal').remove()
-      render()
-   })
+   addListenerForModal()
 })
 
 container.addEventListener('click', (event) => {
+   // edit selected note
    if (event.target.className === 'icon-edit') {
-      console.log('edit')
-      console.log(dataActive)
+      let note = getNoteForEdit(data, event.target.parentElement.id)
+      renderModal(note)
+      addListenerForModal(note)
    }
    // archive all notes
    if (event.target.className === 'header-icon-archive') {
@@ -43,12 +37,10 @@ container.addEventListener('click', (event) => {
    // delete selected note
    if (event.target.className === 'icon-delete') {
       deleteNoteById(data, event.target.parentElement.id)
-      render()
    }
    // delete all notes
    if (event.target.className === 'header-icon-delete') {
       deleteAllNotes(data)
-      render()
    }
 })
 
@@ -130,35 +122,53 @@ function archiveAllNote() {
    calculateSummaryList(dataActive, dataArchived, summaryData)
 }
 // create note in form
-function createNoteInForm() {
+function createOrEditNoteInForm(note) {
    const modal = document.querySelector('#formData')
    let date = new Date()
    let options = { month: 'long', day: 'numeric', year: 'numeric' }
    const dataNote = {
-      id: String(date.getTime()),
+      id: note?.id || String(date.getTime()),
       name: modal[0].value,
-      created: date.toLocaleDateString('en-US', options),
+      created: note?.created || date.toLocaleDateString('en-US', options),
       category: modal[1].value,
       content: modal[2].value,
-      dates: ""
+      dates: note?.dates || parseDate(modal[2].value)
    }
    return dataNote
 }
 // add new note in a data storage
-function addNoteInDataList(data) {
-   data.push(createNoteInForm())
+function addNoteInDataList(data, note) {
+   if (note === undefined) {
+      data.push(createOrEditNoteInForm(note))
+   } else {
+      for (let i = 0; i < data.length; i++) {
+         if (data[i].id === note.id) {
+            data[i] = createOrEditNoteInForm(note)
+         }
+      }
+   }
 }
+// get note for edit in list
+function getNoteForEdit(note, id) {
+   for (let i = 0; i < data.length; i++) {
+      if (note[i].id === id) {
+         return note[i]
+      }
+   }
+}
+function addListenerForModal(note) {
+   const btnOK = document.querySelector('#btnOK')
+   const btnCancel = document.querySelector('#btnCancel')
 
-
-
-
-
-
-
-
-
-
-
-
-// функция с регулярным выражением по поиску даты
-// модальное окно для редактирования заметки
+   btnCancel.addEventListener('click', () => document.querySelector('.modal').remove())
+   btnOK.addEventListener('click', () => {
+      addNoteInDataList(dataActive, note)
+      document.querySelector('.modal').remove()
+      render()
+   })
+}
+// regular expression for date
+function parseDate(str) {
+   var m = str.match(/[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}/g);
+   return m ? m.join(", ") : ""
+}

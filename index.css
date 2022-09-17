@@ -20,7 +20,7 @@
 
 .list-item-notes {
    display: flex;
-   height: 42px;
+   min-height: 42px;
    background-color: #e8eaf5;
    margin-bottom: 10px;
 }
@@ -31,7 +31,7 @@
 }
 
 .header-name {
-   flex: 1 1 30%;
+   flex: 1 1 20%;
    align-self: center;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .header-content {
-   flex: 1 1 15%;
+   flex: 1 1 25%;
    align-self: center;
 }
 
@@ -104,7 +104,7 @@
 
 
 .name {
-   flex: 1 1 30%;
+   flex: 1 1 20%;
    align-self: center;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .content {
-   flex: 1 1 15%;
+   flex: 1 1 25%;
    align-self: center;
    color: #645d5d;
 }
