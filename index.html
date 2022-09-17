@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Notes app</title>
+   <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+   <div class="container">
+      <div class="notes-table">
+         <div class="header-notes">
+            <div class="header-empty"></div>
+            <div class="header-name">Name</div>
+            <div class="header-created">Created</div>
+            <div class="header-category">Category</div>
+            <div class="header-content">Content</div>
+            <div class="header-dates">Dates</div>
+            <div class="header-icon-edit"></div>
+            <div class="header-icon-archive"></div>
+            <div class="header-icon-delete"></div>
+         </div>
+      </div>
+      <button id="active">Show active note</button>
+      <button id="archived">Show archived note</button>
+      <button id="create-note">Create Note</button>
+      <div class="summary-table">
+         <div class="summary-header-notes">
+            <div class="summary-header-empty"></div>
+            <div class="summary-header-category">Note category</div>
+            <div class="summary-header-active">Active</div>
+            <div class="summary-header-archived">Archived</div>
+         </div>
+      </div>
+   </div>
+
+   <!-- <div class="modal">
+      <form action="">
+         <label for="name-note">
+            <p>Name Note</p>
+            <input id="name-note" type="text">
+         </label>
+         <label for="category">
+            <p>Category</p>
+            <select id="category">
+               <option value="Task">Task</option>
+               <option value="Random Thought">Random Thought</option>
+               <option value="Idea">Idea</option>
+            </select>
+         </label>
+         <label for="content-note">
+            <p>Content Note</p>
+            <textarea id="content-note" cols="30" rows="5"></textarea>
+         </label>
+      </form>
+      <button class="modal-button">Create Note</button>
+      <button class="modal-button">Cancel</button>
+   </div> -->
+   <script type="module" src="index.js"></script>
+</body>
+
+</html>
